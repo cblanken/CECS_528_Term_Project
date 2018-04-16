@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CECS_528_Term_Project", "CECS_528_Term_Project.csproj", "{8C54C45C-ECE3-8BD7-9688-A4A0790FC440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CECS_528_Term_Project.Editor", "CECS_528_Term_Project.Editor.csproj", "{5C7525DA-46A6-FE14-3F14-6B3C3B91AD78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C54C45C-ECE3-8BD7-9688-A4A0790FC440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C54C45C-ECE3-8BD7-9688-A4A0790FC440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C54C45C-ECE3-8BD7-9688-A4A0790FC440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C54C45C-ECE3-8BD7-9688-A4A0790FC440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7525DA-46A6-FE14-3F14-6B3C3B91AD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7525DA-46A6-FE14-3F14-6B3C3B91AD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7525DA-46A6-FE14-3F14-6B3C3B91AD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7525DA-46A6-FE14-3F14-6B3C3B91AD78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
