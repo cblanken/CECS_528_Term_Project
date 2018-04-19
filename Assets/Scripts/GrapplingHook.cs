@@ -29,7 +29,7 @@ public class GrapplingHook : MonoBehaviour {
         if(fired)
         {
             LineRenderer rope = hook.GetComponent<LineRenderer>();
-            rope.SetVertexCount(2);
+            rope.positionCount = 2;
             rope.SetPosition(0, hookHolder.transform.position);
             rope.SetPosition(1, hook.transform.position);
         }
@@ -58,7 +58,7 @@ public class GrapplingHook : MonoBehaviour {
                 if(grounded==false)
                 {
                     this.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
-                    this.transform.Translate(Vector3.up*Time.deltaTime*18f);
+                    this.transform.Translate(Vector3.up*Time.deltaTime * 18f);
                 }
                 StartCoroutine("Climb");
             }
@@ -84,7 +84,7 @@ public class GrapplingHook : MonoBehaviour {
         fired = false;
         hooked = false;
         LineRenderer rope = hook.GetComponent<LineRenderer>();
-        rope.SetVertexCount(0);
+        rope.positionCount = 0;
     }
     void CheckIfGrounded()
     {
