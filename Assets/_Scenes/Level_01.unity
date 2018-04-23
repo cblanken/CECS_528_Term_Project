@@ -30432,7 +30432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4616240361590518, guid: 0aaf7927947ec8d4fad4792d9b40b194, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1443622471542072, guid: 0aaf7927947ec8d4fad4792d9b40b194, type: 2}
       propertyPath: m_Name
@@ -32628,8 +32628,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93545a0d313bec44922811811335c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  _speed: 9
   gravity: -14
+  JumpHeight: 3
+  _velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1542912470
 MonoBehaviour:
   m_ObjectHideFlags: 0
