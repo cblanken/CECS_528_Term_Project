@@ -12,7 +12,7 @@ public class GrapplingHook : MonoBehaviour {
     public float playerTravelSpeed;
 
     public GameObject hookedobj;
-    public static bool fired;
+    public bool fired;
     public bool hooked;
     public bool collision;   //collision with NonHookable object
 
@@ -40,15 +40,10 @@ public class GrapplingHook : MonoBehaviour {
         {
             hook.transform.Translate(Vector3.forward * Time.deltaTime * hookTravelSpeed);
             currentDistance = Vector3.Distance(transform.position,hook.transform.position);
-            if(currentDistance>=maxDistance-0.5f)
+            if(currentDistance>=maxDistance || collision == true)
             {
                 ReturnHook();
             }
-            if(collision == true)
-            {
-                ReturnHook();
-            }
-
         }
 
 
@@ -83,7 +78,7 @@ public class GrapplingHook : MonoBehaviour {
         ReturnHook();
     }
 
-    void ReturnHook()
+    public void ReturnHook()
     {
         hook.transform.rotation = hookHolder.transform.rotation;
         hook.transform.position = hookHolder.transform.position;

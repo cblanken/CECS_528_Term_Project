@@ -8,6 +8,7 @@ TagManager:
   - HookHolder
   - Hookable
   - NonHookable
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class FPSInput : MonoBehaviour
     [SerializeField] private float JumpHeight = 4;
     [SerializeField] private Vector3 _velocity;
     private CharacterController _charController;
+    private GrapplingHook grapple;
 
 
     void Start()
@@ -29,6 +30,9 @@ public class FPSInput : MonoBehaviour
             _velocity.y = 0f;
         }
 
+
+
+
         //transform.Translate(Input.GetAxis("Horizontal") * _speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * _speed * Time.deltaTime);
         float deltaX = Input.GetAxis("Horizontal") * _speed;
         float deltaZ = Input.GetAxis("Vertical") * _speed;
@@ -39,10 +43,7 @@ public class FPSInput : MonoBehaviour
         _charController.Move(movement);
 
         // Apply gravity
-        _velocity.y += gravity * Time.deltaTime;
-        _velocity = Vector3.ClampMagnitude(_velocity, 53);
-        _charController.Move(_velocity * 1.5f * Time.deltaTime);
-
+        ApplyGravity();
 
         // Sprint function
         if (Input.GetKey(KeyCode.LeftShift) && _charController.isGrounded)
@@ -54,10 +55,25 @@ public class FPSInput : MonoBehaviour
             _speed = 7.0f;
         }
 
+
         // Jump function
         if (Input.GetButtonDown("Jump") && _charController.isGrounded)
         {
             _velocity.y += Mathf.Sqrt(JumpHeight * -2f * gravity);
         }
+        else if ((Input.GetButtonDown("Jump") && !_charController.isGrounded))
+        {
+            grapple = this.GetComponent<GrapplingHook>();
+            if (grapple.hooked && grapple.fired)
+            {
+                grapple.ReturnHook();
+                _velocity.y += Mathf.Sqrt(JumpHeight * -2f * gravity);
+            }
+        }
+    }
+    void ApplyGravity(){
+        _velocity.y += gravity * Time.deltaTime;
+        _velocity = Vector3.ClampMagnitude(_velocity, 53);
+        _charController.Move(_velocity * 1.5f * Time.deltaTime);
     }
 }
