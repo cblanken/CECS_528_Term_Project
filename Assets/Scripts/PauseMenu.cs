@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.None;
             player.GetComponent<MouseLook>().enabled = false;
+            player.GetComponent<FPSInput>().enabled = false;
             player.GetComponent<GrapplingHook>().enabled = false;
             mainCamera.GetComponent<MouseLook>().enabled = false;
             canvas.enabled = true;
@@ -33,6 +34,7 @@ public class PauseMenu : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.Locked;
             player.GetComponent<MouseLook>().enabled = true;
+            player.GetComponent<FPSInput>().enabled = true;
             player.GetComponent<GrapplingHook>().enabled = true;
             mainCamera.GetComponent<MouseLook>().enabled = true;
             canvas.enabled = false;
