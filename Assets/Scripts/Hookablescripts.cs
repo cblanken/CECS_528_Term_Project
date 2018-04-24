@@ -12,11 +12,12 @@ public class Hookablescripts : MonoBehaviour {
             player.GetComponent<GrapplingHook>().hooked = true;
             player.GetComponent<GrapplingHook>().hookedobj = other.gameObject;
         }
-        else if(other.tag != "Hookable" && other.tag != "Player" && other.tag != "HookHolder")
+        if(other.tag != "Hookable" && other.tag != "Player" && other.tag != "HookHolder")
         {
             player.GetComponent<GrapplingHook>().collision = true;
             player.GetComponent<GrapplingHook>().hooked = false;
             player.GetComponent<GrapplingHook>().hookedobj = null;
+            player.GetComponent<GrapplingHook>().ReturnHook();
         }
     }
 }
