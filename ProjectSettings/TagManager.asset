@@ -9,6 +9,10 @@ TagManager:
   - Hookable
   - NonHookable
   - Item
+  - Collectible2
+  - Collectible1
+  - Door
+  - Switch
   layers:
   - Default
   - TransparentFX
